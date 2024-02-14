@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu!</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #tombolHati {
+            font-size: 24px; /* Ganti sesuai kebutuhan Anda */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Tombol Hati -->
+<button id="tombolHati" onclick="redirectAndPlay()">❤️</button>
+
+<script>
+    function redirectAndPlay() {
+        // Ganti URL 'halaman-tujuan.html' dengan halaman tujuan Anda
+        window.location.href = 'tahap2/tahap2.html';
+
+        // Ganti 'nama-lagu.mp3' dengan nama file lagu Anda
+        var audio = new Audio('lagu/inilagu.mp3');
+
+        // Atur volume (0 hingga 1, misalnya 0.5 untuk setengah volume)
+        audio.volume = 1;
+
+        // Tambahkan event listener untuk memulai pemutaran setelah tombol ditekan
+        audio.addEventListener('canplaythrough', function() {
+            audio.play().catch(function (error) {
+                console.error('Pemutaran audio gagal:', error);
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
